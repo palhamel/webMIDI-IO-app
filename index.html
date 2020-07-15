@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Test MIDI</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+
+      <h1>WebMIDI - Test your input/output 🔌</h1>
+
+      <p>
+        This app will scan and find all the MIDI input/output devices connected to your system.
+      </p>
+      ----------------------------
+      <h4>MIDI Inputs: </h4>
+      <pre id="inputs"></pre>
+
+      <h4>MIDI Outputs:</h4>
+      <pre id="outputs"></pre>
+      ----------------------------
+      <p>Will update when message are received from the inputs:</p>
+
+      <h4>MIDI Messages:</h4>
+      <pre id="messages"></pre>
+    </div>
+  </body>
+  <script src="script.js"></script>
+</html>
