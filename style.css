@@ -1,8 +1,11 @@
 body {
   font-family:system-ui;
   background-color: rgb(252, 255, 213);
+  margin: 2em;
+  width: 100%;
+  max-width: 900px;
 }
 
 .container {
-  margin: 50px 0px 0px 200px;
+  margin: 50px 0px 0px 50px;
 }
