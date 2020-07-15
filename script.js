@@ -8,7 +8,12 @@ navigator.requestMIDIAccess()
     const outputs = access.outputs;
     const inputText = [];
     const outputText = [];
-  
+    
+    access.onstatechange = function(e) {
+      // Print information about the (dis)connected MIDI controller
+      console.log(e.port.name, e.port.manufacturer, e.port.state);
+    };
+
     inputs.forEach((midiInput) => { 
       inputText.push(`FOUND: ${midiInput.name}`);
         midiInput.onmidimessage = function(message) {                  
