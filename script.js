@@ -22,15 +22,17 @@ navigator.requestMIDIAccess()
     inputs.forEach((midiInput) => { 
       inputText.push(` FOUND: ${midiInput.name} // `);
         midiInput.onmidimessage = function(message) {                  
-          document.querySelector("#messages").innerText +=  `# ${midiInput.name}
-        ${new Date()}
-        ==================
-        - Status: ${message.data[0]}
-        - Data 1: ${message.data[1]}
-        - Data 2: ${message.data[2]}
-        ==================\n\n`;
+          document.querySelector("#messages").insertAdjacentHTML('afterbegin', `<p> > ${midiInput.name}
+          ${new Date()}
+          ==================
+          - Status: ${message.data[0]}
+          - Data 1: ${message.data[1]}
+          - Data 2: ${message.data[2]}
+          ==================\n\n</p>`);
         }
     })
+
+    
     // OUTPUTS:
     outputs.forEach((midiOutput) => { 
       outputText.push(` FOUND: ${midiOutput.name} is: ${midiOutput.state} //`);
@@ -42,3 +44,17 @@ navigator.requestMIDIAccess()
  
   });
 
+/* 
+    inputs.forEach((midiInput) => { 
+      inputText.push(` FOUND: ${midiInput.name} // `);
+        midiInput.onmidimessage = function(message) {                  
+          document.querySelector("#messages").innerText +=  `# ${midiInput.name}
+        ${new Date()}
+        ==================
+        - Status: ${message.data[0]}
+        - Data 1: ${message.data[1]}
+        - Data 2: ${message.data[2]}
+        ==================\n\n`;
+        }
+
+*/
